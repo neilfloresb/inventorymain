@@ -1,0 +1,50 @@
+<div class="container" *ngIf="vmpay$ | async as vm">
+  <kendo-grid [kendoGridBinding]="selectedPOrefresh$ | async" [selectable]="{mode:'single'}"
+    (edit)="editHandler($event)" (cancel)="cancelHandler($event)" (save)="saveHandler($event)"
+    (remove)="removeHandler($event)">
+    <kendo-grid-column field="item_code" title="Item Code" [headerStyle]="{ 'background-color': '#666' }"
+      [headerClass]="'headerCustomClass'"></kendo-grid-column>
+    <kendo-grid-column field="item_desc" title="Description" [headerStyle]="{ 'background-color': '#666' }"
+      [headerClass]="'headerCustomClass'"></kendo-grid-column>
+    <kendo-grid-column field="qty_po" title="Quantity" [headerStyle]="{ 'background-color': '#666' }"
+      [headerClass]="'headerCustomClass'"></kendo-grid-column>
+    <kendo-grid-column field="po_um" title="U/M" [headerStyle]="{ 'background-color': '#666' }"
+      [headerClass]="'headerCustomClass'"></kendo-grid-column>
+    <kendo-grid-column field="unit_price" title="Unit Price" format="#,###.00"
+      [headerStyle]="{ 'background-color': '#666' }" [headerClass]="'headerCustomClass'">
+      <ng-template kendoGridFooterTemplate *ngIf="total">
+        Total: {{total["unit_price"].sum | kendoNumber:'#,###.00'}}
+      </ng-template>
+    </kendo-grid-column>
+
+    <kendo-grid-command-column title="command" [width]="220">
+      <ng-template kendoGridCellTemplate let-isNew="isNew">
+        <button kendoGridEditCommand [primary]="true">Edit</button>
+        <button kendoGridRemoveCommand>Remove</button>
+        <button kendoGridSaveCommand [disabled]="formGroup?.invalid">{{ isNew ? 'Add' : 'Update' }}</button>
+        <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+      </ng-template>
+    </kendo-grid-command-column>
+  </kendo-grid>
+  <button kendoButton (click)="onAdd()" [disabled]="false"> SAVING RECORD
+  </button>
+</div>
+
+<!--
+<div class="container-fluid">
+    <kendo-grid [data]="PoDtlView | async" [selectable]="{mode:'single'}" (edit)="editHandler($event)"
+      (cancel)="cancelHandler($event)" (save)="saveHandler($event)" (remove)="removeHandler($event)">
+      <kendo-grid-column field="item_code"></kendo-grid-column>
+      <kendo-grid-column field="item_desc"></kendo-grid-column>
+      <kendo-grid-command-column title="command" [width]="220">
+        <ng-template kendoGridCellTemplate let-isNew="isNew">
+          <button kendoGridEditCommand [primary]="true">Edit</button>
+          <button kendoGridRemoveCommand>Remove</button>
+          <button kendoGridSaveCommand [disabled]="formGroup?.invalid">{{ isNew ? 'Add' : 'Update' }}</button>
+          <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+        </ng-template>
+      </kendo-grid-command-column>
+    </kendo-grid>
+    <button kendoButton (click)="onAdd()" [disabled]="false"> SAVING RECORD
+    </button>
+</div> -->

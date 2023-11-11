@@ -1,0 +1,17 @@
+<div class="grid-wrapper">
+  <kendo-grid [data]="view | async" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort" [sortable]="true"
+    [pageable]="true" scrollable="none" (dataStateChange)="dataStateChange($event)">
+    <kendo-grid-column field="CategoryID" [width]="100"></kendo-grid-column>
+    <kendo-grid-column field="CategoryName" [width]="200"></kendo-grid-column>
+    <kendo-grid-column field="Description" [sortable]="false"> </kendo-grid-column>
+
+      <ng-template kendoGridLoadingTemplate>
+        <div class="k-loading-color"></div>
+        <div class="loading-container">
+          <kendo-loader type="infinite-spinner" themeColor="primary" size="large"></kendo-loader>
+        </div>
+      </ng-template>
+
+  </kendo-grid>
+  <!-- <div *ngIf="view['loading']" class="k-i-loading"></div> -->
+</div>

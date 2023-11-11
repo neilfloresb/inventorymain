@@ -1,0 +1,107 @@
+<p>payable-update works!</p>
+<div class="card-container" *ngIf="PayHdrSelected$ |  async as vm">
+  <h3 class="card-title">Payable Entry</h3>
+  <div class="options-wrapper" *ngIf="viewData$ | async as vm">
+    <form class="k-form k-form-md" [formGroup]="formPay">
+      <fieldset class="k-form-fieldset">
+
+        <div class="wrap">
+          <kendo-formfield showErrors="initial">
+            <kendo-floatinglabel text="Supplier Name">
+              <kendo-combobox formControlName="supp_code" [data]="vm.supplier" textField="supp_name"
+                valueField="supp_code" placeholder="Select Supplier..." [valuePrimitive]="true"
+                (selectionChange)="SupselectionChange($event)" required>
+              </kendo-combobox>
+              <kendo-formerror *ngIf="formPay.controls.supp_code.errors?.required"> Error: Supplier Name is
+                required</kendo-formerror>
+            </kendo-floatinglabel>
+          </kendo-formfield>
+
+          <kendo-formfield class="com2" showErrors="initial">
+            <kendo-floatinglabel text="P.O No.">
+              <kendo-combobox formControlName="po_no" [data]="polisting$ | async" textField="po_no" valueField="po_no"
+                [valuePrimitive]="true" (selectionChange)="POselectionChange($event)" placeholder="Select P.O No.">
+              </kendo-combobox>
+              <kendo-formerror *ngIf="formPay.controls.po_no.errors?.required"> Error: P.O No. is
+                required</kendo-formerror>
+            </kendo-floatinglabel>
+          </kendo-formfield>
+
+          <kendo-formfield class="textbox" showErrors="initial">
+            <kendo-floatinglabel text="Reference No.">
+              <kendo-textbox formControlName="ref_no" [clearButton]="true" #ref_no required></kendo-textbox>
+              <kendo-formerror *ngIf="formPay.controls.ref_no.errors?.required">Error: Reference No. is
+                required</kendo-formerror>
+            </kendo-floatinglabel>
+          </kendo-formfield>
+
+          <kendo-formfield class="com2" showErrors="initial">
+            <kendo-floatinglabel text="Branch Name">
+              <kendo-combobox formControlName="branchname" [data]="branchListing$ | async" textField="branchname"
+                valueField="branchname" [valuePrimitive]="true" (selectionChange)="BranchselectionChange($event)"
+                placeholder="Select Branch">
+              </kendo-combobox>
+              <kendo-formerror *ngIf="formPay.controls.branchname.errors?.required">Error: Branch Name is
+                required</kendo-formerror>
+            </kendo-floatinglabel>
+          </kendo-formfield>
+
+          <kendo-formfield showErrors="initial">
+            <kendo-floatinglabel text="Transaction Date">
+              <kendo-datepicker formControlName="dr_date" [min]="min" (valueChange)="TranonChange($event)"
+                [format]="fullFormat" required></kendo-datepicker>
+              <kendo-formerror *ngIf="formPay.controls.dr_date.errors?.required"> Error: Trans. Date is required
+              </kendo-formerror>
+            </kendo-floatinglabel>
+          </kendo-formfield>
+        </div>
+
+        <div class="wrap2">
+
+          <kendo-formfield class="proj">
+            <kendo-floatinglabel text="Project Name">
+              <kendo-textbox formControlName="projectname" [clearButton]="true" #projectname></kendo-textbox>
+              <!-- <kendo-formerror>Error: reference no is required</kendo-formerror> -->
+            </kendo-floatinglabel>
+          </kendo-formfield>
+
+          <kendo-formfield>
+            <kendo-floatinglabel text="Bank Name">
+              <kendo-combobox formControlName="bankcode" [data]="bankListing$ | async" textField="bankname"
+                valueField="bankcode" placeholder="Select Bank ..." [valuePrimitive]="true"
+                (selectionChange)="BankselectionChange($event)">
+              </kendo-combobox>
+            </kendo-floatinglabel>
+          </kendo-formfield>
+
+          <kendo-formfield class="remarks">
+            <kendo-floatinglabel text="Cheque No.:">
+              <kendo-textbox formControlName="checkno" [clearButton]="true" #checkno></kendo-textbox>
+              <!-- <kendo-formerror>Error: reference no is required</kendo-formerror> -->
+            </kendo-floatinglabel>
+          </kendo-formfield>
+
+          <kendo-formfield class="remarks">
+            <kendo-floatinglabel text="Cheque Date:">
+              <kendo-datepicker formControlName="checkdate" [min]="min"
+                (valueChange)="ChequeonChange($event)"></kendo-datepicker>
+              <!-- <kendo-formerror *ngIf="form.controls.email.errors?.required">Error: Email is required</kendo-formerror>
+                      <kendo-formerror *ngIf="form.controls.email.errors?.email">Error: Not valid email format</kendo-formerror> -->
+            </kendo-floatinglabel>
+          </kendo-formfield>
+
+          <kendo-formfield class="remarks">
+            <kendo-floatinglabel text="CV No.:">
+              <kendo-textbox formControlName="cvno" [clearButton]="true" #cvno></kendo-textbox>
+              <!-- <kendo-formerror>Error: reference no is required</kendo-formerror> -->
+            </kendo-floatinglabel>
+          </kendo-formfield>
+        </div>
+
+        <div class="k-form-buttons k-buttons-end">
+          <button kendoButton themeColor="primary" (click)="submitForm()" [disabled]="!formPay.valid">Submit</button>
+          <button kendoButton (click)="clearForm()">Clear</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>

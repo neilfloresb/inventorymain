@@ -1,0 +1,111 @@
+my-registration {
+  display: block;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+my-registration > .k-icon.k-i-loading {
+  font-size: 64px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.example-wrapper {
+  min-height: 280px;
+  align-content: flex-start;
+}
+
+.example-wrapper p,
+.example-col p {
+  margin: 0 0 10px;
+}
+
+.example-wrapper p:first-child,
+.example-col p:first-child {
+  margin-top: 0;
+}
+
+.example-col {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.example-config {
+  margin: 0 0 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.event-log {
+  margin: 0;
+  padding: 0;
+  max-height: 100px;
+  overflow-y: auto;
+  list-style-type: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+.event-log li {
+  margin: 0;
+  padding: 0.3em;
+  line-height: 1.2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.event-log li:last-child {
+  margin-bottom: -1px;
+}
+
+.k-avatar {
+  margin-left: 80px;
+  font-size: 30px;
+}
+.example {
+  display: flex;
+  justify-content: center;
+}
+.k-form {
+  width: 240px;
+  border: solid;
+  padding: 5px;
+  border-style: outset;
+}
+
+.full-screen-container {
+  background-image: url("../../../assets/background-image.jpg");
+  /* to strect the image*/
+
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-container {
+  --color: hsl(var(--primary-dark-hsl), 0.7);
+  //background-color: blue;
+  //background-color: hsl(200,100%,50%,.5);
+  background-color: var(--color);
+  box-shadow: 0 0 15px 0 var(--color);
+  padding: 40px 30px;
+
+  //width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+kendo-label {
+  font-weight: bold;
+}
+
+.k-svg-icon.k-svg-i-eye {
+  color: blue;
+}

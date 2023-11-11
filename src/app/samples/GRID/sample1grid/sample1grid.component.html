@@ -1,0 +1,11 @@
+<div class="full-screen-container">
+
+  <p>sample1grid works!</p>
+  <kendo-grid [kendoGridBinding]="data" [selectable]="true" kendoGridSelectBy="ProductID"
+    [selectedKeys]="selectedKeys" (selectionChange)="onSelectionChange($event)" (cellClick)="onCellClick($event)"
+    [height]="500" scrollable="virtual" [pageSize]="20" [rowHeight]="36">
+    <kendo-grid-column field="ProductID"></kendo-grid-column>
+    <kendo-grid-column field="ProductName"></kendo-grid-column>
+    <kendo-grid-column field="UnitsInStock"></kendo-grid-column>
+  </kendo-grid>
+</div>

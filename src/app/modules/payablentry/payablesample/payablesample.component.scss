@@ -1,0 +1,42 @@
+.container-login {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxtop {
+  width: 449px;
+  height: 366px;
+  background: white;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+}
+.boxback {
+  width: 451px;
+  height: 366px;
+  background: #6580e9;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+}
+.logintxt {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  color: #6082ee;
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.Signtxt {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #617be1;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

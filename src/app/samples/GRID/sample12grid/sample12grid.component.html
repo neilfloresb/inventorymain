@@ -1,0 +1,7 @@
+<kendo-grid [data]="gridView" [pageSize]="pageSize" [skip]="skip" [pageable]="true" (pageChange)="pageChange($event)"
+  [height]="500" (selectedKeysChange)="keyChange($event)" kendoGridSelectBy="ProductID" [selectedKeys]="mySelection">
+  <kendo-grid-column field="ProductName" title="Product Name" [width]="300"></kendo-grid-column>
+  <kendo-grid-column field="UnitsInStock" title="Units In Stock"></kendo-grid-column>
+  <kendo-grid-column field="UnitsOnOrder" title="Units On Order"></kendo-grid-column>
+  <kendo-grid-column field="ReorderLevel" title="Reorder Level"></kendo-grid-column>
+</kendo-grid>

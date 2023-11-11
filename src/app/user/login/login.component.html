@@ -1,0 +1,48 @@
+<div class="full-screen-container">
+  <div class="login-container">
+    <form class="k-form k-form-md" [formGroup]="form">
+      <fieldset class="k-form-fieldset">
+        <legend class="k-form-legend">Your account</legend>
+        <kendo-avatar imageSrc="../assets/img/single_user.png" width="80px" height="80px" shape="circle">
+        </kendo-avatar>
+        <kendo-formfield>
+          <kendo-label [for]="username" text="Username"></kendo-label>
+          <kendo-textbox formControlName="username" [clearButton]="true" #username required></kendo-textbox>
+
+          <kendo-formhint>Your Username</kendo-formhint>
+          <kendo-formerror>Error: Username is required</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+          <kendo-label [for]="password" text="Password"> </kendo-label>
+          <kendo-textbox formControlName="password" #password required [clearButton]="true">
+            <ng-template kendoTextBoxSuffixTemplate>
+              <!-- //   <button kendoButton look="clear" icon="eye" (click)="toggleVisibility()"></button> -->
+              <button kendoButton look="clear" [svgIcon]="eyeIcon" (click)="toggleVisibility()"></button>
+            </ng-template>
+          </kendo-textbox>
+
+          <kendo-formhint>Your password</kendo-formhint>
+          <kendo-formerror>Error: Password is required</kendo-formerror>
+        </kendo-formfield>
+
+        <kendo-formfield>
+          <div class="k-checkbox-wrap">
+            <input #loggedin type="checkbox" kendoCheckBox formControlName="loggedin" />
+            <kendo-label [for]="loggedin" class="k-checkbox-label" text="Keep me logged in"></kendo-label>
+          </div>
+          <kendo-formhint>Next time, you will be logged in automatically</kendo-formhint>
+        </kendo-formfield>
+    
+        <div class="k-form-buttons">
+          <button kendoButton themeColor="primary" (click)="login()">Login</button>
+          <button kendoButton (click)="clearForm()">Clear</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<!--define a login dialog using ngmodel -->
+<!-- <kendo-dialog #loginDialog title="Login" [visible]="loginDialogVisible"> -->
+
+<!-- </kendo-dialog> -->

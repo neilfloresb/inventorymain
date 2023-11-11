@@ -1,0 +1,159 @@
+// .options-wrapper {
+//           display: flex;
+//           justify-content: space-around;
+//           background-color: rgba(0, 0, 0, 0.03);
+//           border: 1px solid rgba(0, 0, 0, 0.08);
+//           margin: 0 0 20px;
+//           padding: 20px;
+//       }
+
+//       .options-wrapper kendo-label {
+//           text-align: center;
+//           display: inline-grid;
+//       }
+
+//       .options-wrapper .k-label {
+//           color: #a1a1a1;
+//       }
+
+//       .example-wrapper {
+//           width: 300px;
+//           margin: 15px auto 0;
+//           box-shadow: 0px 10px 20px #00000029;
+//           border-radius: 30px;
+//       }
+//       .example-wrapper {
+//           width: 300px;
+//           margin: 0 auto;
+//           box-shadow: 0px 10px 20px #00000029;
+//           border-radius: 30px;
+//       }
+//       .page { padding: 20px 10px; }
+//       .content {
+//           background: #F9F9F9;
+//           height: 470px;
+//           overflow: auto;
+//       }
+//       .box { padding: 4px; }
+//       .box-0, .box-5, .box-10 { background-color: #89c0dd; }
+//       .box-1, .box-6, .box-11 { background-color: #85d9b0; }
+//       .box-2, .box-7, .box-12 { background-color: #f2ab7e; }
+//       .box-3, .box-8, .box-13 { background-color: #fee47c; }
+//       .box-4, .box-9, .box-14 { background-color: #fea69c; }
+
+.grid-layout-container {
+  overflow-x: auto;
+}
+
+.k-grid-layout {
+  width: 870px;
+  margin: auto;
+}
+
+.k-chip-list {
+  padding: 5px 0px;
+  grid-gap: 6px;
+  margin-top: 8px;
+}
+
+.k-chip {
+  margin: 0px;
+  border-radius: 2px;
+}
+.k-form {
+  width: 80%;
+//  border: solid;
+}
+
+.event-calendar {
+  width: 100%;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.k-input {
+  font-weight: bold;
+}
+
+.k-text-end, .k-buttons-end {
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+.wrap kendo-datepicker {
+  width: 160px;
+  margin-right: 10px;
+}
+.wrap kendo-combobox {
+  width: 460px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.wrap .com2 kendo-combobox {
+  width: 170px;
+  // margin-right: 10px;
+}
+.wrap .textbox {
+  width: 140px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.wrap2 {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.wrap2 kendo-combobox {
+  width: 350px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.wrap2 .remarks {
+  width: 150px;
+}
+
+.wrap2 .proj {
+  width: 300px;
+}
+
+.options-wrapper {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 0 0 20px;
+  padding: 20px;
+}
+
+.detailpo-wrapper {
+  //display: flex;
+  //justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 0 0 20px;
+  padding: 20px;
+}
+.options-wrapper > kendo-label {
+  display: grid;
+  text-align: center;
+}
+.example-wrapper {
+  width: 300px;
+  margin: 0 auto;
+  box-shadow: 0px 10px 20px #00000029;
+  border-radius: 30px;
+}
+.page {
+  padding: 20px 10px;
+}
+.content {
+  background: #f9f9f9;
+  height: 470px;
+  overflow: auto;
+}

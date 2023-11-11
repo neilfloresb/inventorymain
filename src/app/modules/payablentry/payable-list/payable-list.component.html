@@ -1,0 +1,17 @@
+<p>payable-list works!</p>
+<div>
+  <!-- <p>Number in Text: {{ 1234567.89 | numberToText:'USD' }}</p> -->
+  <!-- Output: "One Million Two Hundred Thirty-Four Thousand Five Hundred Sixty-Seven Point Eight Nine USD" -->
+
+  <!-- <p>Number in Text: {{ 9876543210.12 | numberToText:'EUR' }}</p> -->
+  <!-- Output: "Nine Billion Eight Hundred Seventy-Six Million Five Hundred Forty-Three Thousand Two Hundred Ten Point Twelve EUR" -->
+
+  <!-- <p>Number in Text: {{ 123647 | numberToText:'' }}</p>
+  <p>Number in Text: {{ 34489.29.12 | numberToText:'' }}</p> -->
+  <p>Number in Text: {{ 49.29 | numberToText:'' }}</p>
+
+  <!-- <p>Number in Text using Service:  {{ numberintxt }}</p> -->
+
+  <p>Number in Text using Service: {{ convertNumberToText(78934489) }}</p>
+  <p>Number in Text using Service: {{ convertNumberToText(45.49) }}</p>
+</div>

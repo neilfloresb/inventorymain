@@ -1,0 +1,20 @@
+<p>issuance works!</p>
+  <div>
+    <tr-viewer #viewer1 [containerStyle]="viewerContainerStyle" [serviceUrl]="link_report_resource" [reportSource]="rs"
+      [viewMode]="'INTERACTIVE'" [scaleMode]="'SPECIFIC'" [scale]="1.0" [ready]="ready"
+      [viewerToolTipOpening]="viewerToolTipOpening" [enableAccessibility]="false" [sendEmail]="{ enabled: 'true' }">
+    </tr-viewer>
+  </div>
+
+
+  <!-- <div>
+    <tr-viewer #viewer1 [containerStyle]="viewerContainerStyle" [serviceUrl]="link_report_resource"
+      [reportSource]="{
+            report: 'Sample1.trbp',
+            parameters: {}
+        }" [viewMode]="'INTERACTIVE'" [scaleMode]="'SPECIFIC'" [scale]="1.0" [ready]="ready"
+      [viewerToolTipOpening]="viewerToolTipOpening" [enableAccessibility]="false">
+    </tr-viewer>
+    <button (click)="viewer1.refreshReport()">Refresh</button>
+    <button (click)="viewer1.commands.print.exec()">Print</button>
+  </div> -->

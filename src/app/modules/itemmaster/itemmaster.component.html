@@ -1,0 +1,53 @@
+<div> Selected items by row index: {{ mySelection | json }}</div>
+<div class="full-screen-container">
+
+  <kendo-grid [kendoGridBinding]="view | async " filterable="menu" [navigable]="true" [selectable]="{mode:'single'}"
+    kendoGridSelectBy="item_code" [(selectedKeys)]="mySelection" (selectionChange)="onSelectionChange($event)"
+    >
+    <kendo-grid-checkbox-column [width]="20"></kendo-grid-checkbox-column>
+    <kendo-grid-column title="CODE" field="item_code" [width]="120" [filterable]="false">
+    </kendo-grid-column>
+    <kendo-grid-column title="Description" field="item_desc" [width]="310" [filterable]="true">
+    </kendo-grid-column>
+  </kendo-grid>
+
+  <!-- <ng-template kendoGridLoadingTemplate>
+    <div class="k-loading-color"></div>
+    <div class="loading-container">
+      <kendo-loader type="converging-spinner" size="large"></kendo-loader>
+    </div>
+  </ng-template> -->
+  <!-- Selected items by row index: {{ mySelection | json }} -->
+  <!-- // <div *ngIf="view['loading']" class="k-i-loading"></div> -->
+
+  <ng-template kendoGridLoadingTemplate>
+    <div class="k-loading-color"></div>
+    <div class="loading-container">
+      <kendo-loader type="infinite-spinner" themeColor="primary" size="large"></kendo-loader>
+    </div>
+  </ng-template>
+</div>
+<!-- <div class="full-screen-container" *ngIf="viewItems$ | async as vm">
+  <table class="table mb-0">
+    <tbody *ngFor="let item of vm">
+      <tr>{{item.item_code}}</tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+<!-- <div class="example-inner">
+  <div class="k-loading-panel" *ngIf="view.loading">
+    <div class="k-loading-panel-mask"></div>
+    <div class="k-loading-panel-wrapper">
+      <kendo-loader type="infinite-spinner" themeColor="primary" size="large"> </kendo-loader>
+      <div class="k-loading-panel-text">Loading...</div>
+    </div>
+  </div>
+  <kendo-grid [data]="view | async" [height]="250" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort"
+    [sortable]="true" [pageable]="true" scrollable="none" (dataStateChange)="dataStateChange($event)">
+    <kendo-grid-column field="CategoryID"></kendo-grid-column>
+    <kendo-grid-column field="CategoryName"></kendo-grid-column>
+    <kendo-grid-column field="Description" [sortable]="false"> </kendo-grid-column>
+  </kendo-grid>
+</div> -->
